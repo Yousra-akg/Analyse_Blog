@@ -1,0 +1,39 @@
+@startuml
+title Diagramme de cas d'utilisation (MVP) - Blog : Tétouan Créative
+top to bottom direction
+scale 1.3
+
+' --- Acteurs ---
+actor "Visiteur" as Visiteur
+actor "Éditeur" as Editeur
+actor "Administrateur" as Admin
+
+' --- Système ---
+rectangle "MVP - Blog Tétouan Créative" {
+
+  ' Cas d’utilisation Visiteur
+  (Consulter la page d'accueil) as UC1
+  (Consulter la liste des articles) as UC2
+  (Voir les détails d’un article) as UC3
+  (Partager un article) as UC4
+
+  ' Cas d’utilisation Éditeur
+  (Créer un article) as UC5
+
+  ' Cas d’utilisation Administrateur
+  (Valider / publier un article) as UC6
+}
+
+' --- Relations ---
+Visiteur -- UC1
+Visiteur -- UC2
+Visiteur -- UC3
+Visiteur -- UC4
+
+Editeur -- UC5
+Admin -- UC6
+
+' --- Héritage ---
+Admin <|-- Editeur
+
+@enduml
